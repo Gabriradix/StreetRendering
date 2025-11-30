@@ -82,7 +82,7 @@ loader.load(
         console.log('Point cloud loaded');
     },
     (xhr) => {
-        const percent = (xhr.loaded / xhr.total * 100);
+        const percent = Math.min(100, (xhr.loaded / xhr.total * 100));
         const progressBar = document.getElementById('progress');
         const percentageText = document.getElementById('percentage');
 
@@ -208,3 +208,4 @@ if (hamburger && mobileNav) {
         }
     });
 }
+
